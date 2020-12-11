@@ -38,19 +38,19 @@ class Queue {
     if (this.first) {
       return this.first
     }
-    return 'Queue is empty'
   }
 
   all() {
     if (this.first === null) {
       return
     }
-    const items = [this.first.value]
+    const items = []
     let node = this.first
-    while (node.next) {
+    do {
       items.push(node.value)
       node = node.next
     }
+    while (node)
     return items
   }
 }

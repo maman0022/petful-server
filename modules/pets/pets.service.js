@@ -16,10 +16,18 @@ store.dogs.forEach(dog => pets.dogs.enqueue(dog))
 
 module.exports = {
   get() {
-    // Return the pets next in line to be adopted.
+    const cats = pets.cats.all()
+    const dogs = pets.dogs.all()
+    return {
+      cats,
+      dogs
+    }
   },
 
   dequeue(type) {
-    // Remove a pet from the queue.
+    if (!type) {
+      return new Error('Type is required')
+    }
+    pets[type].dequeue()
   }
 }
