@@ -43,6 +43,6 @@ Returns an object containing "cats" and "dogs", both of which are an array of ob
 Removes the passed in animal from the queue. *Requires a request body*   
 Key|Value
 ---|---
-type|string ("cats" | "dogs"), required
+type|string ("cats" or "dogs"), required
   
 Returns a 204 status code on success.
