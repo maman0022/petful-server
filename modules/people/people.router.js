@@ -8,7 +8,7 @@ const router = express.Router()
 router.get('/', (req, res) => {
   const people = People.get()
   if (!people) {
-    return res.status(200).json({ message: 'There are no people in line' })
+    return res.status(404).json({ message: 'There are no people in line' })
   }
   return res.status(200).json(people)
 })
